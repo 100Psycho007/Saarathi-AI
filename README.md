@@ -75,6 +75,14 @@ uvicorn main:app --reload
 
 Backend will be available at `http://localhost:8000`
 
+### Database Setup
+
+The admin_users table is already created in the Neon database. To register your first admin:
+
+1. Set `ADMIN_REGISTRATION_KEY` in your backend `.env` file
+2. Use the `/api/auth/register` endpoint with your registration key
+3. Or run the registration through the frontend at `/register`
+
 ### Frontend Setup
 
 ```bash
