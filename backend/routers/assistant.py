@@ -62,6 +62,8 @@ async def chat_with_assistant(
             occupation=payload.occupation,
             annual_income=payload.annual_income,
         )
+        # Log profile for debugging
+        print(f"[ASSISTANT] Profile received: occupation={profile_obj.occupation}, age={profile_obj.age}, state={profile_obj.state}")
     
     # Gate assistant: require profile for scheme responses
     if not profile_obj:
@@ -86,9 +88,12 @@ async def chat_with_assistant(
 
     # If we have a profile, compute eligibility and explanation
     if profile_obj:
+        eligible_count = 0
         for s in schemes:
             elig = check_eligibility(profile_obj, s)
+            # ONLY suggest schemes that the user is actually eligible for
             if elig.get("eligible"):
+                eligible_count += 1
                 summary = mock_ai.summarize_scheme(s)
                 explanation = mock_ai.explain_eligibility(profile_obj, s, elig)
                 suggested.append(
@@ -98,6 +103,8 @@ async def chat_with_assistant(
                         eligibility_explanation=explanation,
                     )
                 )
+        # Log for debugging
+        print(f"[ASSISTANT] Found {eligible_count} eligible schemes out of {len(schemes)} total")
         # Sort so that we don't overload; take top 3
         suggested = suggested[:3]
     else:
