@@ -4,6 +4,7 @@ import ProfileCard from '../components/ProfileCard';
 import SchemesCard from '../components/SchemesCard';
 import SchemeModal from '../components/SchemeModal';
 import AssistantChat from '../components/AssistantChat';
+import { AssistantChatErrorBoundary } from '../components/AssistantChatErrorBoundary';
 
 function HomePage() {
   const [profile, setProfile] = useState<UserProfile | null>(null);
@@ -64,7 +65,9 @@ function HomePage() {
       )}
 
       {/* Assistant Chat */}
-      <AssistantChat profile={profile} />
+      <AssistantChatErrorBoundary>
+        <AssistantChat profile={profile} />
+      </AssistantChatErrorBoundary>
     </div>
   );
 }

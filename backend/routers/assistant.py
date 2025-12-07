@@ -62,6 +62,13 @@ async def chat_with_assistant(
             occupation=payload.occupation,
             annual_income=payload.annual_income,
         )
+    
+    # Gate assistant: require profile for scheme responses
+    if not profile_obj:
+        return ChatResponse(
+            answer="Hi! Please fill your basic details first to get personalized scheme support.",
+            suggested_schemes=[]
+        )
 
     # Fetch schemes; if state known, filter by it + Central, else fetch a small set
     query = db.query(models.Scheme)

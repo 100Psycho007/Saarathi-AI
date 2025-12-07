@@ -33,6 +33,7 @@ export default function AssistantChat({ profile }: AssistantChatProps) {
   const [isListening, setIsListening] = useState(false);
   const [voiceOutputEnabled, setVoiceOutputEnabled] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const chatWindowRef = useRef<HTMLDivElement>(null);
   const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
 
   // Check if speech recognition is supported
@@ -52,7 +53,17 @@ export default function AssistantChat({ profile }: AssistantChatProps) {
   }, []);
 
   const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    if (chatWindowRef?.current) {
+      try {
+        chatWindowRef.current.scrollTo({
+          top: chatWindowRef.current.scrollHeight,
+          behavior: 'smooth'
+        });
+      } catch (error) {
+        // Fallback if scrollTo fails
+        messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
   };
 
   useEffect(() => {
@@ -340,7 +351,7 @@ export default function AssistantChat({ profile }: AssistantChatProps) {
           )}
 
           {/* Messages */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-3 max-h-72 min-h-[16rem]">
+          <div ref={chatWindowRef} className="flex-1 overflow-y-auto p-4 space-y-3 max-h-72 min-h-[16rem]">
             {messages.length === 0 && (
               <div className="flex flex-col items-center justify-center h-full text-center py-8">
                 <div className="text-4xl mb-3">👋</div>
