@@ -161,7 +161,18 @@ Create a `.env` file in the `backend/` directory:
 DATABASE_URL=postgresql://user:password@host/dbname
 BYTEZ_API_KEY=your_bytez_api_key_here  # Optional
 USE_BYTEZ_LLM=true  # Set to false to use mock AI
+ADMIN_USERNAME=admin  # Default admin username
+ADMIN_PASSWORD=buildathon2025  # Default admin password
+ADMIN_REGISTRATION_KEY=buildathon-admin-2025  # Key for new admin registration
 ```
+
+### Admin Access
+
+Default admin credentials:
+- **Username**: `admin`
+- **Password**: `buildathon2025`
+
+To register a new admin, use the registration key: `buildathon-admin-2025`
 
 ### Frontend Environment Variables
 

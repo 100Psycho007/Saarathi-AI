@@ -81,7 +81,7 @@ async def register_admin(registration: RegisterRequest):
     from services.auth import add_user, load_users
     
     # Check registration key
-    REGISTRATION_KEY = os.getenv("ADMIN_REGISTRATION_KEY", "buildathon-admin-2024")
+    REGISTRATION_KEY = os.getenv("ADMIN_REGISTRATION_KEY", "buildathon-admin-2025")
     if registration.registration_key != REGISTRATION_KEY:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
