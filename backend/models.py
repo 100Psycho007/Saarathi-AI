@@ -40,3 +40,12 @@ class UserProfile(Base):
     annual_income = Column(Integer, nullable=True)
     caste = Column(String, nullable=True)  # e.g., "SC", "ST", "OBC", "General"
     disability = Column(String, nullable=True)  # e.g., "Yes", "No"
+
+
+class AdminUser(Base):
+    __tablename__ = "admin_users"
+
+    id = Column(Integer, primary_key=True, index=True)
+    username = Column(String, unique=True, nullable=False, index=True)
+    hashed_password = Column(String, nullable=False)
+    created_at = Column(DateTime, nullable=True)

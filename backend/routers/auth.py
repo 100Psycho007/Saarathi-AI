@@ -4,6 +4,8 @@ Authentication router for admin login
 from datetime import timedelta
 from fastapi import APIRouter, HTTPException, status, Depends
 from pydantic import BaseModel
+from sqlalchemy.orm import Session
+from db import get_db
 from services.auth import authenticate_admin, create_access_token, require_admin, JWT_EXPIRE_MINUTES
 
 router = APIRouter(prefix="/api/auth", tags=["auth"])
@@ -28,9 +30,9 @@ class UserInfo(BaseModel):
     is_admin: bool
 
 @router.post("/login", response_model=LoginResponse)
-async def login(credentials: LoginRequest):
+async def login(credentials: LoginRequest, db: Session = Depends(get_db)):
     """Admin login endpoint"""
-    if not authenticate_admin(credentials.username, credentials.password):
+    if not authenticate_admin(credentials.username, credentials.password, db):
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail="Incorrect username or password",
@@ -68,21 +70,21 @@ async def check_auth(token_payload: dict = Depends(require_admin)):
     return {"authenticated": True, "username": token_payload["sub"]}
 
 @router.get("/users")
-async def list_users(token_payload: dict = Depends(require_admin)):
-    """List registered users (admin only, for debugging)"""
-    from services.auth import load_users
-    users = load_users()
-    return {"users": list(users.keys())}
+async def list_users(token_payload: dict = Depends(require_admin), db: Session = Depends(get_db)):
+    """List registered users (admin only)"""
+    from models import AdminUser
+    users = db.query(AdminUser).all()
+    return {"users": [{"username": u.username, "created_at": u.created_at} for u in users]}
 
 @router.post("/register")
-async def register_admin(registration: RegisterRequest):
+async def register_admin(registration: RegisterRequest, db: Session = Depends(get_db)):
     """Register a new admin (requires registration key)"""
     import os
-    from services.auth import add_user, load_users
+    from services.auth import add_user
     
     # Check registration key
-    REGISTRATION_KEY = os.getenv("ADMIN_REGISTRATION_KEY", "buildathon-admin-2025")
-    if registration.registration_key != REGISTRATION_KEY:
+    REGISTRATION_KEY = os.getenv("ADMIN_REGISTRATION_KEY")
+    if not REGISTRATION_KEY or registration.registration_key != REGISTRATION_KEY:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail="Invalid registration key"
@@ -102,20 +104,12 @@ async def register_admin(registration: RegisterRequest):
             detail="Password must be at least 8 characters long"
         )
     
-    # Check if username already exists
-    users = load_users()
-    if registration.username in users:
+    # Add the new user
+    success = add_user(registration.username, registration.password, db)
+    if not success:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail="Username already exists"
-        )
-    
-    # Add the new user
-    success = add_user(registration.username, registration.password)
-    if not success:
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail="Failed to register user"
         )
     
     return {
