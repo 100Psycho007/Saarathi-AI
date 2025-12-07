@@ -285,8 +285,8 @@ function AdminPage() {
                         }
                       </td>
                       <td className="py-3 px-2 text-sm text-slate-300">
-                        {scheme.min_income !== null || scheme.max_income !== null ? 
-                          `₹${scheme.min_income || 0} - ₹${scheme.max_income || '∞'}` : 
+                        {scheme.max_income !== null ? 
+                          `₹${scheme.max_income || '∞'}` : 
                           'Not set'
                         }
                       </td>

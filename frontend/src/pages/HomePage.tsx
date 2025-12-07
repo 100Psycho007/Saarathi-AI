@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { UserProfile, EligibilityResponse, Scheme } from '../types';
 import ProfileCard from '../components/ProfileCard';
 import SchemesCard from '../components/SchemesCard';

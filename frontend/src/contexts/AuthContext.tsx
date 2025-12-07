@@ -69,9 +69,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setIsAuthenticated(false);
   };
 
-  const getAuthHeaders = () => {
+  const getAuthHeaders = (): Record<string, string> => {
     const token = localStorage.getItem('admin_token');
-    return token ? { 'Authorization': `Bearer ${token}` } : {};
+    if (token) {
+      return { 'Authorization': `Bearer ${token}` };
+    }
+    return {};
   };
 
   return (

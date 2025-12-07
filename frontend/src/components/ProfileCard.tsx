@@ -54,14 +54,14 @@ export default function ProfileCard({ onProfileResolved }: ProfileCardProps) {
 
   const handleIncomeBlur = () => {
     // Format the income when user leaves the field
-    if (formData.annual_income > 0) {
+    if (formData.annual_income != null && formData.annual_income > 0) {
       setIncomeDisplayValue(formatIndianNumber(formData.annual_income));
     }
   };
 
   const handleIncomeFocus = () => {
     // Show raw number when user focuses on the field for easier editing
-    if (formData.annual_income > 0) {
+    if (formData.annual_income != null && formData.annual_income > 0) {
       setIncomeDisplayValue(formData.annual_income.toString());
     }
   };
@@ -240,7 +240,7 @@ export default function ProfileCard({ onProfileResolved }: ProfileCardProps) {
             className="w-full px-4 py-2.5 bg-slate-800/50 border border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
             placeholder={getIncomePlaceholder()}
           />
-          {formData.annual_income > 0 && (
+          {formData.annual_income != null && formData.annual_income > 0 && (
             <p className="mt-1 text-xs text-slate-400">
               {formData.annual_income >= 100000 
                 ? `${Math.floor(formData.annual_income / 100000)} Lakh${formData.annual_income >= 200000 ? 's' : ''}`
