@@ -11,11 +11,12 @@ Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title="AI Gov Scheme Navigator API")
 
-# CORS middleware - tightened for security but dev-friendly
+# CORS middleware - allow production and local dev
 frontend_origin = os.getenv("FRONTEND_ORIGIN")
 origins = [
     "http://localhost:5173",
     "http://localhost:3000",
+    "https://saarathi-ai.netlify.app",  # Production Netlify
 ]
 if frontend_origin:
     origins.append(frontend_origin)
@@ -23,8 +24,8 @@ if frontend_origin:
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
-    allow_credentials=False,
-    allow_methods=["GET", "POST", "OPTIONS"],
+    allow_credentials=True,
+    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allow_headers=["*"],
 )
 
