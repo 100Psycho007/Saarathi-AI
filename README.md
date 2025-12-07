@@ -89,6 +89,14 @@ npm run dev
 
 Frontend will be available at `http://localhost:5173`
 
+### Routes
+
+- `/` - Landing page with mission statement and CTA
+- `/app` - Main application interface with profile form and scheme matching
+- `/login` - User login page
+- `/register` - User registration page
+- `/admin` - Admin panel (protected route)
+
 ---
 
 ## 📋 API Endpoints
@@ -107,11 +115,13 @@ Frontend will be available at `http://localhost:5173`
 
 ## 🎯 How It Works
 
-1. **Fill Your Profile** - Enter your details: state, age, occupation, income, etc.
-2. **Get Matched** - Our eligibility engine analyzes your profile against all available schemes
-3. **Explore Schemes** - View eligible schemes with detailed information and reasons
-4. **Ask Questions** - Use the AI assistant to get clarifications and guidance
-5. **Apply** - Follow the application process with direct links to official portals
+1. **Visit Landing Page** - Start at the clean, mission-focused landing page
+2. **Enter Saarathi AI** - Click the CTA button to access the main application
+3. **Fill Your Profile** - Enter your details: state, age, occupation, income, etc.
+4. **Get Matched** - Our eligibility engine analyzes your profile against all available schemes
+5. **Explore Schemes** - View eligible schemes with detailed information and reasons
+6. **Ask Questions** - Use the AI assistant to get clarifications and guidance
+7. **Apply** - Follow the application process with direct links to official portals
 
 ---
 
@@ -130,7 +140,7 @@ Saarathi-AI/
 ├── frontend/
 │   ├── src/
 │   │   ├── components/  # React components
-│   │   ├── pages/       # Page components
+│   │   ├── pages/       # Page components (LandingPage, AppPage, etc.)
 │   │   ├── contexts/    # React contexts
 │   │   ├── utils/       # Utility functions
 │   │   └── types.ts     # TypeScript types
@@ -160,6 +170,22 @@ Create a `.env` file in the `frontend/` directory:
 ```env
 VITE_API_BASE_URL=http://localhost:8000/api
 ```
+
+---
+
+## 🌐 Deployment
+
+### Live Application
+
+- **Frontend**: [https://saarathi-ai.netlify.app](https://saarathi-ai.netlify.app)
+- **Backend**: [https://saarathi-ai.onrender.com](https://saarathi-ai.onrender.com)
+- **Database**: Neon PostgreSQL (Serverless)
+
+### Deployment Stack
+
+- **Frontend Hosting**: Netlify (with automatic deployments)
+- **Backend Hosting**: Render (with automatic deployments)
+- **Database**: Neon (Serverless PostgreSQL with branching)
 
 ---
 

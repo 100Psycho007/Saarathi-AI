@@ -9,14 +9,14 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.ico', 'robots.txt', 'apple-touch-icon.png'],
       manifest: {
-        name: 'AI Government Scheme Navigator',
-        short_name: 'AI Gov Schemes',
-        description: 'Helps Indian citizens discover central and state welfare schemes they may be eligible for.',
+        name: 'Saarathi AI - Welfare Schemes Navigator',
+        short_name: 'Saarathi AI',
+        description: 'Helping every citizen discover and apply for the benefits they are eligible for.',
         theme_color: '#020617',
         background_color: '#020617',
         display: 'standalone',
         orientation: 'portrait',
-        start_url: '/',
+        start_url: '/app',
         icons: [
           {
             src: 'pwa-192x192.png',

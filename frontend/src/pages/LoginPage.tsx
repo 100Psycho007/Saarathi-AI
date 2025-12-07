@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { API_BASE_URL } from '../config';
+import { useAuth } from '../contexts/AuthContext';
 
 interface LoginResponse {
   access_token: string;
@@ -15,6 +16,7 @@ function LoginPage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const navigate = useNavigate();
+  const { login } = useAuth();
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -31,20 +33,24 @@ function LoginPage() {
       });
 
       if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.detail || 'Login failed');
+        const errorData = await response.json().catch(() => ({ detail: 'Login failed' }));
+        throw new Error(errorData.detail || 'Invalid username or password');
       }
 
       const data: LoginResponse = await response.json();
       
-      // Store token in localStorage with 5-minute expiration
+      // Store token and update auth context
       localStorage.setItem('admin_token', data.access_token);
       localStorage.setItem('admin_token_expires', (Date.now() + data.expires_in * 1000).toString());
+      
+      // Update auth context
+      login(data.access_token);
       
       // Redirect to admin page
       navigate('/admin');
     } catch (error) {
-      setError(error instanceof Error ? error.message : 'Login failed');
+      console.error('Login error:', error);
+      setError(error instanceof Error ? error.message : 'Login failed. Please try again.');
     } finally {
       setLoading(false);
     }
