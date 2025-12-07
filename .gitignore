@@ -22,5 +22,6 @@ frontend/.env
 Thumbs.db
 .idea/
 .vscode/
+.kiro/
 # Local Netlify folder
 .netlify
