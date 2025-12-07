@@ -1,0 +1,38 @@
+[
+  {
+    "source_scheme_id": "TN-EDU-01",
+    "name": "Chief Minister's Breakfast Scheme",
+    "state": "Tamil Nadu",
+    "category": "Education",
+    "short_description": "Free nutritious breakfast for government school students to improve attendance and nutrition.",
+    "full_description": "This scheme provides free breakfast to students in government primary schools across Tamil Nadu. The program aims to improve nutritional status, increase school attendance, and reduce dropout rates.",
+    "min_age": 5,
+    "max_age": 10,
+    "min_income": null,
+    "max_income": null,
+    "occupation": "Student",
+    "gender": "Any",
+    "caste": "Any",
+    "disability": "Any",
+    "official_link": "https://tn.gov.in/scheme/breakfast",
+    "application_process": "1. Enroll child in government primary school\n2. No separate application needed\n3. Breakfast provided automatically to all students\n4. Parents can verify through school authorities"
+  },
+  {
+    "source_scheme_id": "TN-AGR-01",
+    "name": "Free Electricity for Farmers",
+    "state": "Tamil Nadu",
+    "category": "Agriculture",
+    "short_description": "Free electricity supply for agricultural pump sets to support farming activities.",
+    "full_description": "Tamil Nadu government provides free electricity to farmers for agricultural purposes. This scheme covers electricity charges for pump sets used for irrigation, helping farmers reduce cultivation costs.",
+    "min_age": 18,
+    "max_age": null,
+    "min_income": null,
+    "max_income": null,
+    "occupation": "Farmer",
+    "gender": "Any",
+    "caste": "Any",
+    "disability": "Any",
+    "official_link": "https://tangedco.gov.in",
+    "application_process": "1. Apply for agricultural electricity connection\n2. Submit land ownership documents\n3. Provide Aadhaar and farmer ID\n4. TANGEDCO will process and provide connection\n5. Free electricity automatically applied to agricultural connections"
+  }
+]

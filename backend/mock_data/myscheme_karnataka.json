@@ -1,0 +1,47 @@
+[
+  {
+    "source_scheme_id": "KA-STUDENT-01",
+    "name": "Karnataka Post-Matric Scholarship",
+    "state": "Karnataka",
+    "category": "student",
+    "short_description": "Scholarship for Karnataka students from economically weaker sections studying after SSLC.",
+    "full_description": "Financial assistance for eligible students belonging to specified categories to continue post-matric education.",
+    "min_age": 15,
+    "max_age": 35,
+    "min_income": null,
+    "max_income": 250000,
+    "occupation": "student",
+    "official_link": "https://example.gov.in/karnataka-post-matric-scholarship",
+    "application_process": "1. Register on the state scholarship portal.\n2. Fill online application with academic details.\n3. Upload income and caste certificates.\n4. Submit and track application status online."
+  },
+  {
+    "source_scheme_id": "KA-FARMER-01",
+    "name": "Karnataka Farmer Equipment Subsidy",
+    "state": "Karnataka",
+    "category": "farmer",
+    "short_description": "Subsidy on farm equipment for small and marginal farmers.",
+    "full_description": "Provides subsidy on purchase of approved farm machinery and equipment to reduce input costs.",
+    "min_age": 18,
+    "max_age": 70,
+    "min_income": null,
+    "max_income": 800000,
+    "occupation": "farmer",
+    "official_link": "https://example.gov.in/karnataka-farmer-equipment-subsidy",
+    "application_process": "1. Visit the Raitha Samparka Kendra or apply through the agriculture department portal.\n2. Submit land records and ID proof.\n3. Choose eligible equipment.\n4. Await approval and subsidy disbursal."
+  },
+  {
+    "source_scheme_id": "KA-WOMEN-01",
+    "name": "Karnataka Women Entrepreneur Scheme",
+    "state": "Karnataka",
+    "category": "women",
+    "short_description": "Financial support and training for women entrepreneurs in Karnataka.",
+    "full_description": "Provides subsidized loans, training programs, and mentorship for women starting or expanding businesses in Karnataka.",
+    "min_age": 21,
+    "max_age": 55,
+    "min_income": null,
+    "max_income": 500000,
+    "occupation": "self-employed",
+    "official_link": "https://example.gov.in/karnataka-women-entrepreneur",
+    "application_process": "1. Apply through the Karnataka Udyog Mitra portal.\n2. Submit business plan and financial projections.\n3. Attend mandatory training sessions.\n4. Receive loan approval and disbursement."
+  }
+]

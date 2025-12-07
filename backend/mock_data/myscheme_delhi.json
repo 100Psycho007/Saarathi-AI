@@ -1,0 +1,38 @@
+[
+  {
+    "source_scheme_id": "DL-EDU-01",
+    "name": "Delhi Scholarship Scheme",
+    "state": "Delhi",
+    "category": "Education",
+    "short_description": "Financial assistance for students from economically weaker sections pursuing higher education.",
+    "full_description": "The Delhi government provides scholarships to meritorious students from economically weaker sections. The scheme covers tuition fees and provides maintenance allowance for students in colleges and universities.",
+    "min_age": 17,
+    "max_age": 30,
+    "min_income": null,
+    "max_income": 200000,
+    "occupation": "Student",
+    "gender": "Any",
+    "caste": "Any",
+    "disability": "Any",
+    "official_link": "https://delhi.gov.in/scholarship",
+    "application_process": "1. Visit Delhi government scholarship portal\n2. Register with Aadhaar and student ID\n3. Upload income certificate and mark sheets\n4. Submit application before deadline\n5. Track status online"
+  },
+  {
+    "source_scheme_id": "DL-WOM-01",
+    "name": "Ladli Scheme",
+    "state": "Delhi",
+    "category": "Women & Child",
+    "short_description": "Financial assistance scheme for girl child to promote education and empowerment.",
+    "full_description": "The Ladli Scheme provides financial assistance to families with girl children. The scheme includes deposits made at different stages of the girl's education, which can be withdrawn after she turns 18 or passes 10th/12th standard.",
+    "min_age": 0,
+    "max_age": 18,
+    "min_income": null,
+    "max_income": 100000,
+    "occupation": "Any",
+    "gender": "Female",
+    "caste": "Any",
+    "disability": "Any",
+    "official_link": "https://wcddel.in/ladli.html",
+    "application_process": "1. Apply within one year of birth or admission to school\n2. Visit nearest Women & Child Development office\n3. Submit birth certificate, residence proof, income certificate\n4. Bank account opened in girl's name\n5. Deposits made at birth, admission to class 1, 6, 9, 11, and 12"
+  }
+]

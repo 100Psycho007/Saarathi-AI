@@ -1,0 +1,32 @@
+[
+  {
+    "source_scheme_id": "MH-STUDENT-01",
+    "name": "Maharashtra EBC Scholarship",
+    "state": "Maharashtra",
+    "category": "student",
+    "short_description": "Scholarship for Economically Backward Class students in Maharashtra.",
+    "full_description": "Financial assistance for students from economically backward classes pursuing higher education in Maharashtra.",
+    "min_age": 16,
+    "max_age": 30,
+    "min_income": null,
+    "max_income": 100000,
+    "occupation": "student",
+    "official_link": "https://example.gov.in/maharashtra-ebc-scholarship",
+    "application_process": "1. Register on Mahadbt portal.\n2. Fill application form with academic details.\n3. Upload required documents (income certificate, caste certificate).\n4. Submit and track status online."
+  },
+  {
+    "source_scheme_id": "MH-FARMER-01",
+    "name": "Maharashtra Shetkari Sanman Yojana",
+    "state": "Maharashtra",
+    "category": "farmer",
+    "short_description": "Direct income support for farmers in Maharashtra.",
+    "full_description": "Annual financial assistance of Rs. 6000 to eligible farmers in Maharashtra to support agricultural activities.",
+    "min_age": 18,
+    "max_age": null,
+    "min_income": null,
+    "max_income": null,
+    "occupation": "farmer",
+    "official_link": "https://example.gov.in/maharashtra-shetkari-sanman",
+    "application_process": "1. Visit nearest agriculture office or apply online.\n2. Submit land ownership documents.\n3. Provide bank account details.\n4. Receive direct benefit transfer."
+  }
+]

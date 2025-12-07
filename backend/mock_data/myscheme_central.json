@@ -1,0 +1,47 @@
+[
+  {
+    "source_scheme_id": "CENTRAL-STUDENT-01",
+    "name": "National Means-cum-Merit Scholarship",
+    "state": "Central",
+    "category": "student",
+    "short_description": "Central government scholarship for meritorious students from economically weaker sections.",
+    "full_description": "Scholarship scheme to provide financial assistance to meritorious students from economically weaker sections to prevent dropouts at class VIII and encourage them to continue study at secondary stage.",
+    "min_age": 13,
+    "max_age": 18,
+    "min_income": null,
+    "max_income": 150000,
+    "occupation": "student",
+    "official_link": "https://scholarships.gov.in/",
+    "application_process": "1. Register on National Scholarship Portal.\n2. Fill application with academic and family details.\n3. Upload income certificate and mark sheets.\n4. Submit and await verification."
+  },
+  {
+    "source_scheme_id": "CENTRAL-FARMER-01",
+    "name": "PM-KISAN (Pradhan Mantri Kisan Samman Nidhi)",
+    "state": "Central",
+    "category": "farmer",
+    "short_description": "Direct income support to all landholding farmers across India.",
+    "full_description": "Central sector scheme providing income support of Rs. 6000 per year in three equal installments to all landholding farmer families.",
+    "min_age": 18,
+    "max_age": null,
+    "min_income": null,
+    "max_income": null,
+    "occupation": "farmer",
+    "official_link": "https://pmkisan.gov.in/",
+    "application_process": "1. Visit PM-KISAN portal or nearest CSC.\n2. Provide Aadhaar number and land records.\n3. Link bank account.\n4. Receive installments directly in bank account."
+  },
+  {
+    "source_scheme_id": "CENTRAL-WOMEN-01",
+    "name": "Stand Up India Scheme",
+    "state": "Central",
+    "category": "women",
+    "short_description": "Loans for SC/ST and women entrepreneurs to start greenfield enterprises.",
+    "full_description": "Facilitates bank loans between Rs. 10 lakh and Rs. 1 crore to at least one SC/ST borrower and one woman borrower per bank branch for setting up greenfield enterprises.",
+    "min_age": 18,
+    "max_age": null,
+    "min_income": null,
+    "max_income": null,
+    "occupation": "self-employed",
+    "official_link": "https://www.standupmitra.in/",
+    "application_process": "1. Apply through Stand Up India portal.\n2. Submit business plan and project report.\n3. Approach bank for loan processing.\n4. Complete formalities and receive loan."
+  }
+]
